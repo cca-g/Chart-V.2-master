@@ -1,0 +1,33 @@
+﻿<Window x:Class="plot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:plot"
+         xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid Background="Bisque">
+        <Grid.RowDefinitions>
+            <RowDefinition>
+            </RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <d3:Chart x:Name="pl"  BottomTitle=" Horizontal Axis Label" LeftTitle="Vertical Axis Label" Grid.ColumnSpan="3" Background="Bisque" Grid.Row="1">
+
+            <Grid Name="GridPlot" >
+                <d3:LineGraph x:Name="LineA" StrokeThickness = "2" Stroke="Blue" Description = "Line A" />
+                <d3:LineGraph x:Name="LineMAX" StrokeThickness = "2" Stroke="Red" Description = "Line MAX" />
+                <d3:LineGraph x:Name="LineMIN" StrokeThickness = "2" Stroke="Gray" Description = "Line MIN" />
+            </Grid>
+
+        </d3:Chart>
+        <Button x:Name="But_Copy" Width="100" Height="70" Click="But_Copy_Click" IsCancel="True" Grid.Row="0" Grid.Column="0"  Content="Старт" FontSize="24" Background="Purple" Margin="82,32,82,107"/>
+    </Grid>
+</Window>
